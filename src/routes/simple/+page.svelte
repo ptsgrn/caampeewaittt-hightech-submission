@@ -56,11 +56,11 @@
 </svelte:head>
 
 <main
-  class="max-w-lg border w-full h-full m-auto rounded-lg flex flex-col p-5 space-y-5"
+  class="container border h-full mx-auto rounded-lg flex flex-col p-5 space-y-5"
   transition:flyAndScale
 >
   <a
-    class="flex flex-col justify-center items-center hover:bg-muted p-3 rounded-md transition-all"
+    class="flex flex-col justify-center items-center hover:bg-muted p-3 rounded-sm transition-all"
     title="กลับสู่หน้าหลัก"
     href="/"
   >
@@ -79,7 +79,7 @@
     {:then docs}
       {#each docs as doc}
         <div
-          class="flex felx-row w-full hover:gap-1 group transition-all overflow-hidden"
+          class="flex felx-row w-full hover:gap-1 focus-within:gap-1 group transition-all overflow-hidden p-1"
           transition:flyAndScale
         >
           <Tooltip.Root>
@@ -87,7 +87,7 @@
               <Button
                 builders={[builder]}
                 variant="outline"
-                class="text-left justify-start flex flex-row gap-2 w-full overflow-hidden "
+                class="text-left justify-start flex flex-row gap-2 w-full overflow-hidden select-none"
                 href="/simple/{doc.id}"
               >
                 <span class="text-sm shrink-0">{doc.title}</span>
